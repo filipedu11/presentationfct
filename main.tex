@@ -114,7 +114,7 @@
 \subtitle{Subtitulo da apresentação. (ex: Preparação da Dissertação do Mestrado Integrado em Engenharia Informática)} 
 
 %conteudo dentro dos [PrimeiroNome] optional - Para aparecer no footer
-\author[John]{John Snow}
+\author[John Snow]{John Snow}
 
 %Opção para mais que um autor e de diferentes instituições
 % \author[Author, Anders] % (optional, for multiple authors)
@@ -153,12 +153,20 @@
 \nologo
 \backgroundcolorwhite
 %Inclusão dos ficheiros que compões os restantes slides
-\include{slides/introduction}
+\include{slides/1_introduction}
     %Estes ficheiro pertencem à introdução por isso a identação (Não obrigatório)
-    \include{slides/motivation}
-    \include{slides/problem}
-    \include{slides/objective}
-\include{slides/relatedwork}
-\include{slides/proposedwork}
+    \include{slides/2_motivation}
+    \include{slides/3_problem}
+    \include{slides/4_objective}
+\include{slides/5_relatedwork}
+\include{slides/6_proposedwork}
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Para o Textpad (MacOS) reconhecer e importar os ficheiros com os slides
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{slides}
