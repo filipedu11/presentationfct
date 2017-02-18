@@ -1,4 +1,4 @@
-\documentclass[usenames,dvipsnames]{beamer}
+\documentclass[usenames,dvipsnames]{main}
 
 \usepackage[portuguese]{babel}
 \usepackage{xcolor}
@@ -9,49 +9,42 @@
 \usepackage{eso-pic}
 \usepackage{graphicx}
 
-%Para fins de teste
-\newcommand{\mylipsum}{just dummy text}
-\newcommand{\myliplip}{\mylipsum{} \mylipsum{} \mylipsum{} \mylipsum}
-\newcommand{\myblabla}{this is more serious or not}
-\newcommand{\myblagf}{how i hear my girlfriend when i'm watching my footbal team? "bla bla bla bla"}
- 
 \usetheme{Boadilla}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Para inserir o logo no canto superior esquerdo, por definição está no
-% canto inferior direito.
-% Alteras os valores de pgfxy para alterar a posição do logo
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                   %
+% -> The logo command is a predefined command of beamer class       %
+%                                                                   %
+% -> It's possible to insert a lot of logos. To do it we just       %
+%  needed to insert the command \newlogo inside the predefined      %
+%  \logo command and add new logos to the first slide               %
+%                                                                   %
+% -> Explanation of \newlogo{1}{2}{3}{4}:                           %
+%                                                                   %
+%    1) The path to logo (ex: logos/logofct2)                       %
+%                                                                   %
+%    2) Size (numeric) of logo, they will maintan aspect ratio      %
+%       (ex:2.5)                                                    %
+%                                                                   %
+%    3) Horizontal position (numeric) in slide (ex: -9.2)           %
+%                                                                   %
+%    4) Vertical position (numeric) in slide (ex: 1.9)              %
+%                                                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \logo{
-
-    %LOGO FCT
-    \pgfputat{\pgfxy(-9.2,1.9)}{
-        \pgfbox[right,base]{
-            \includegraphics[width=2.5cm,keepaspectratio]{logos/logofct2}
-        }
-    }
-    %LOGO UNL
-    \pgfputat{\pgfxy(-0.1,2.4)}{
-        \pgfbox[right,base]{
-            \includegraphics[width=3.7cm,keepaspectratio]{logos/logounl}
-        }
-    }
+    %Insert FCT logo
+    \newlogo{logos/logofct2}{2.5}{-9.2}{1.9}
+    %Insert UNL logo
+    \newlogo{logos/logounl}{3.7}{-0.1}{2.4}
 }
 
-%Comando para remover logos
-\newcommand{\nologo}{\setbeamertemplate{logo}{}}
 
-% Alteração das cores do footer para corresponder com as da fct
-\setbeamercolor{author in head/foot}{fg=white, bg=LimeGreen!80!black}
-\setbeamercolor{title in head/foot}{fg=white, bg=NavyBlue}
-\setbeamercolor{date in head/foot}{fg=white, bg=Cyan!80!black}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                             %
+% Stylised Content -          %
+%                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Alteração das cores para os titulos de cada slide
-\setbeamercolor{frametitle}{fg=White, bg=NavyBlue}
-%Alteração das cores para os subtitulos de cada slide
-\setbeamercolor{framesubtitle}{fg=White}
-
-%Alteração da formatação e cores dos ícones das listas e as suas formas
 \setbeamertemplate{itemize item}{
     \color{Cyan!80!black}$\blacksquare$
 }
@@ -59,64 +52,53 @@
     \color{LimeGreen!80!black}$\blacktriangleright$
 }
 
-%Alteração da formatação e cores da listas enumeradas
-\setbeamertemplate{enumerate items}[default]
-\setbeamercolor{enumerate item}{fg=Cyan!80!black}
-\setbeamercolor{enumerate subitem}{fg=LimeGreen!80!black}
-  
-%Alteração dos blocos de informação
-\setbeamercolor{block title}{bg=NavyBlue!80!white,fg=white}
-\setbeamercolor{block body}{bg=white!27!black,fg=white}
+% Footer colour of FCT-UNL
+\setbeamercolor{author in head/foot}{fg=white, bg=greenfct}
+\setbeamercolor{title in head/foot}{fg=white, bg=bluedarkfct}
+\setbeamercolor{date in head/foot}{fg=white, bg=bluelightfct}
+
+%Title colour definition for each slide
+\setbeamercolor{frametitle}{fg=White, bg=NavyBlue}
+
+%Subtitle colour definition for each slide
+\setbeamercolor{framesubtitle}{fg=White}
 
 %Alterção das cores para os dados à aparecer no primeiro slide
-\setbeamercolor{title}{fg=white}
-\setbeamercolor{subtitle}{fg=white!80!black}
-\setbeamercolor{author}{fg=white!80!black}
-\setbeamercolor{date}{fg=white!80!black}
+\setbeamercolor{title}{fg=black}
+\setbeamercolor{subtitle}{fg=black!90!white}
+\setbeamercolor{author}{fg=black!80!white}
 
-%Background canvas - se o valor do outer e inner for diferente queria um efeito visual
-\usebackgroundtemplate{
-    \begin{tikzpicture}
-        \path [
-            outer color = white!27!black, 
-            inner color = white!27!black
-        ]
-        (0,0) rectangle (\paperwidth,\paperheight);
-    \end{tikzpicture}
-}
 
-%Comando para remover o backgroud do canvas
-\newcommand{\backgroundcolorwhite}{
-    \usebackgroundtemplate{
-        \begin{tikzpicture}
-            \path [
-                outer color = white, 
-                inner color = white
-            ]
-            (0,0) rectangle (\paperwidth,\paperheight);
-        \end{tikzpicture}
-    }
-}
+%%%%%%%%%%%%%%%%%%%%%%
+%                    %
+% Begin presentation %
+%                    %
+%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Escrita do conteúdo dos slides
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% The content between [] in all fields is optional (to show on footer)
 
-%conteudo dentro dos [Qualquer Coisa] optional - Para aparecer no footer
+% Principle title of presentation
 \title[Relatório Estágio]
 {
     \textbf{Titulo do trabalho/estudo/apresentação }
 }
  
-% Subtitulo
+% Subtitule of presentation
 \subtitle{Subtitulo da apresentação. (ex: Preparação da Dissertação do Mestrado Integrado em Engenharia Informática)} 
 
-%conteudo dentro dos [PrimeiroNome] optional - Para aparecer no footer
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                   %
+% Author name (case for one author) %
+%                                   %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author[John Snow]{John Snow}
 
-%Opção para mais que um autor e de diferentes instituições
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                           %
+% If the presentation have two or more author               %
+%                                                           %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % \author[Author, Anders] % (optional, for multiple authors)
 % {F.~Author\inst{1} \and S.~Anders\inst{2}}
 % \institute[Universities Here and There] % (optional)
@@ -127,10 +109,11 @@
 %   \and
 %   \inst{2}%
 %   Institute of Theoretical Philosophy\\
-%   University There
-% }
+%   University There                                             
+% \}                                                            
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%conteudo dentro dos [] optional - Para aparecer no footer
+% The name of institute that has realize the study
 \institute[FCT]
 {
     \color{LimeGreen}F\color{black}aculdade de
@@ -140,21 +123,25 @@
     \color{white!60!black}Universidade \color{green!65!black}Nova \color{white!60!black}de Lisboa
 }
 
-%conteudo dentro dos [] optional - Para aparecer no footer
+% The date (\today command on ever compile code will put the current date)
 \date[\today]{\today}
 
-
-%Inicio do documento
+%%%%%%%%%%%%%%%%%%%%%%%
+%  Begin document  %
+%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
-%Criação do primeiro slide
+% Create the first slide with the previous content describe 
 \maketitle
-%Remoção dos logos para as restantes slides
+
+% Remove the logos for the next slides 
+% (it's possible to ``create'' a new logo with command \newlogo in different parts of the canvas)
 \nologo
-\backgroundcolorwhite
-%Inclusão dos ficheiros que compões os restantes slides
+%\removebackgroundcanvas
+
+% Include files por presentatio
 \include{slides/1_introduction}
-    %Estes ficheiro pertencem à introdução por isso a identação (Não obrigatório)
+    % This are idented for organization, no required (implies that the slides above are related with introduction )
     \include{slides/2_motivation}
     \include{slides/3_problem}
     \include{slides/4_objective}
@@ -164,9 +151,8 @@
 \end{document}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-% Para o Textpad (MacOS) reconhecer e importar os ficheiros com os slides
-%
+%                                                                        
+% To the Textpad (MacOS) recognize and import the files in folder slides 
+%                                                                         
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \include{slides}
