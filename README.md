@@ -4,4 +4,4 @@
 This is a latex presentation for FCT-UNL
 
 ##Description
-This template subserve the students of FCT-UNL that have to do some presentation of studies like curricular projects, thesis presentation and others.
+This template subserves the students of FCT-UNL that have to do study presentations, like curricular projects, thesis and other academic related studies.

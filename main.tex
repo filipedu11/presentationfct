@@ -1,0 +1,159 @@
+\documentclass[usenames,dvipsnames]{beamer}
+
+\usepackage[portuguese]{babel}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{textpos}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
+%Para fins de teste
+\newcommand{\mylipsum}{just dummy text}
+\newcommand{\myliplip}{\mylipsum{} \mylipsum{} \mylipsum{} \mylipsum}
+ 
+\usetheme{Boadilla}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Para inserir o logo no canto superior esquerdo, por definição está no
+% canto inferior direito.
+% Alteras os valores de pgfxy para alterar a posição do logo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\logo{
+
+    %LOGO FCT
+    \pgfputat{\pgfxy(-9.2,1.9)}{
+        \pgfbox[right,base]{
+            \includegraphics[width=2.5cm,keepaspectratio]{logos/logofct2}
+        }
+    }
+    %LOGO UNL
+    \pgfputat{\pgfxy(-0.1,2.4)}{
+        \pgfbox[right,base]{
+            \includegraphics[width=3.7cm,keepaspectratio]{logos/logounl}
+        }
+    }
+}
+
+%Comando para remover logos
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+% Alteração das cores do footer para corresponder com as da fct
+\setbeamercolor{author in head/foot}{fg=white, bg=LimeGreen!80!black}
+\setbeamercolor{title in head/foot}{fg=white, bg=NavyBlue}
+\setbeamercolor{date in head/foot}{fg=white, bg=Cyan!80!black}
+
+%Alteração das cores para os titulos de cada slide
+\setbeamercolor{frametitle}{fg=White, bg=NavyBlue}
+%Alteração das cores para os subtitulos de cada slide
+\setbeamercolor{framesubtitle}{fg=White}
+
+%Alteração da formatação e cores dos ícones das listas e as suas formas
+\setbeamertemplate{itemize item}{
+    \color{Cyan!80!black}$\blacksquare$
+}
+\setbeamertemplate{itemize subitem} {
+    \color{LimeGreen!80!black}$\blacktriangleright$
+}
+
+%Alteração da formatação e cores da listas enumeradas
+\setbeamertemplate{enumerate items}[default]
+\setbeamercolor{enumerate item}{fg=Cyan!80!black}
+\setbeamercolor{enumerate subitem}{fg=LimeGreen!80!black}
+  
+%Alteração dos blocos de informação
+\setbeamercolor{block title}{bg=NavyBlue!80!white,fg=white}
+\setbeamercolor{block body}{bg=white!27!black,fg=white}
+
+%Alterção das cores para os dados à aparecer no primeiro slide
+\setbeamercolor{title}{fg=white}
+\setbeamercolor{subtitle}{fg=white!80!black}
+\setbeamercolor{author}{fg=white!80!black}
+\setbeamercolor{date}{fg=white!80!black}
+
+%Background canvas - se o valor do outer e inner for diferente queria um efeito visual
+\usebackgroundtemplate{
+    \begin{tikzpicture}
+        \path [
+            outer color = white!27!black, 
+            inner color = white!27!black
+        ]
+        (0,0) rectangle (\paperwidth,\paperheight);
+    \end{tikzpicture}
+}
+
+%Comando para remover o backgroud do canvas
+\newcommand{\backgroundcolorwhite}{
+    \usebackgroundtemplate{
+        \begin{tikzpicture}
+            \path [
+                outer color = white, 
+                inner color = white
+            ]
+            (0,0) rectangle (\paperwidth,\paperheight);
+        \end{tikzpicture}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Escrita do conteúdo dos slides
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%conteudo dentro dos [Qualquer Coisa] optional - Para aparecer no footer
+\title[Relatório Estágio]
+{
+    \textbf{Titulo do trabalho/estudo/apresentação }
+}
+ 
+% Subtitulo
+\subtitle{Subtitulo da apresentação. (ex: Preparação da Dissertação do Mestrado Integrado em Engenharia Informática)} 
+
+%conteudo dentro dos [PrimeiroNome] optional - Para aparecer no footer
+\author[John]{John Snow}
+
+%Opção para mais que um autor e de diferentes instituições
+% \author[Author, Anders] % (optional, for multiple authors)
+% {F.~Author\inst{1} \and S.~Anders\inst{2}}
+% \institute[Universities Here and There] % (optional)
+% {
+%   \inst{1}%
+%   Institute of Computer Science\\
+%   University Here
+%   \and
+%   \inst{2}%
+%   Institute of Theoretical Philosophy\\
+%   University There
+% }
+
+%conteudo dentro dos [] optional - Para aparecer no footer
+\institute[FCT]
+{
+    \color{LimeGreen}F\color{black}aculdade de
+    \color{NavyBlue!90!white}C\color{black}iências e 
+    \color{Cyan}T\color{black}ecnologia 
+    \\ 
+    \color{white!60!black}Universidade \color{green!65!black}Nova \color{white!60!black}de Lisboa
+}
+
+%conteudo dentro dos [] optional - Para aparecer no footer
+\date[\today]{\today}
+
+\begin{document}
+
+%Criação do primeiro slide
+\maketitle
+%Remoção dos logos para as restantes slides
+\nologo
+\backgroundcolorwhite
+%Inclusão dos ficheiros que compões os restantes slides
+\include{slides/introduction}
+    \include{slides/motivation}
+    \include{slides/problem}
+    \include{slides/objective}
+\include{slides/relatedwork}
+\include{slides/proposedwork}
+
+\end{document}
