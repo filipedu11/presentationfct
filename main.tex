@@ -33,9 +33,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \logo{
     %Insert FCT logo
-    \newlogo{logos/logofct2}{2.5}{-9.2}{1.9}
+    \newlogo{logos/logofct2}{2.2}{-55}{80}
     %Insert UNL logo
-    \newlogo{logos/logounl}{3.7}{-0.1}{2.4}
+    \newlogo{logos/logounl}{3.2}{-85}{30}
+    %Insert head icon
+    \newlogo{figures/headicon}{3.5}{-342}{28}
 }
 
 
@@ -44,29 +46,10 @@
 % Stylised Content -          %
 %                             %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\setbeamertemplate{itemize item}{
-    \color{Cyan!80!black}$\blacksquare$
-}
-\setbeamertemplate{itemize subitem} {
-    \color{LimeGreen!80!black}$\blacktriangleright$
-}
-
-% Footer colour of FCT-UNL
-\setbeamercolor{author in head/foot}{fg=white, bg=greenfct}
-\setbeamercolor{title in head/foot}{fg=white, bg=bluedarkfct}
-\setbeamercolor{date in head/foot}{fg=white, bg=bluelightfct}
-
-%Title colour definition for each slide
-\setbeamercolor{frametitle}{fg=White, bg=NavyBlue}
-
-%Subtitle colour definition for each slide
-\setbeamercolor{framesubtitle}{fg=White}
-
-%Alterção das cores para os dados à aparecer no primeiro slide
-\setbeamercolor{title}{fg=black}
-\setbeamercolor{subtitle}{fg=black!90!white}
-\setbeamercolor{author}{fg=black!80!white}
+\fctfooter
+\bluewhitetitle
+\firstpage
+\changelisticons
 
 
 %%%%%%%%%%%%%%%%%%%%%%

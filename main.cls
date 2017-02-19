@@ -9,6 +9,7 @@
 \RequirePackage{xcolor}
 \RequirePackage{tikz}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 % Write some dummy contents. For testing purpose
@@ -87,10 +88,10 @@
 
 %Command to insert logos
 \newcommand{\newlogo}[4]{
-    \pgfputat{\pgfxy(#3,#4)}{
-        \pgfbox[right,base]{
-            \includegraphics[width=#2cm,keepaspectratio]{#1}
-        }
+    \framebox{      % just so you can see where the "picture" is
+      \begin{picture}(0,0)
+         \put(#3,#4){\includegraphics[width=#2cm,keepaspectratio]{#1}}
+      \end{picture}
     }
 }
 
@@ -190,3 +191,43 @@
 \newcommand{\removebackgroundcanvas}{
     \usebackgroundtemplate{color = white}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%
+% command white text %
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\wt}{
+    \color{white}
+}
+
+% Footer colour of FCT-UNL
+\newcommand{\fctfooter}{
+    \setbeamercolor{author in head/foot}{fg=white, bg=greenfct}
+    \setbeamercolor{title in head/foot}{fg=white, bg=bluedarkfct}
+    \setbeamercolor{date in head/foot}{fg=white, bg=bluelightfct}
+}
+
+%Customize for each title
+\newcommand{\bluewhitetitle}{
+    %Title colour definition for each slide
+    \setbeamercolor{frametitle}{fg=White, bg=NavyBlue}
+    %Subtitle colour definition for each slide
+    \setbeamercolor{framesubtitle}{fg=White}
+}
+
+\newcommand{\firstpage}{
+    %Alterção das cores para os dados à aparecer no primeiro slide
+    \setbeamercolor{title}{fg=black}
+    \setbeamercolor{subtitle}{fg=black!90!white}
+    \setbeamercolor{author}{fg=black!80!white}
+}
+
+\newcommand{\changelisticons}{
+    %Alterção das cores para os dados à aparecer no primeiro slide
+    \setbeamertemplate{itemize item}{
+    \color{Cyan!80!black}$\blacksquare$
+    }
+    \setbeamertemplate{itemize subitem} {
+        \color{LimeGreen!80!black}$\blacktriangleright$
+    }
+}
+
