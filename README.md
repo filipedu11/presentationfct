@@ -1,10 +1,10 @@
 # Presentation FCT-UNL
 
 ## Summary
-This is a non official latex presentation themed for FCT-UNL
+This is a non official LaTeX and Microsoft PowerPoint presentation template themed for FCT NOVA
 
 ##Description
-This template subserves the students of FCT-UNL that have to do study presentations, like curricular projects, thesis and other academic related studies.
+This template subserves the students of FCT NOVA that have to do study presentations, like curricular projects, thesis and other academic related studies.
 
 ## Contributing
 1. Fork it!
@@ -14,7 +14,7 @@ This template subserves the students of FCT-UNL that have to do study presentati
 5. Submit a pull request :D
 
 ##Disclaimer
-This is not an official template from FCT-NOVA, use at your own discretion.
+This is not an official template from FCT NOVA, use at your own discretion.
 
 ##License
 
