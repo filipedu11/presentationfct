@@ -6,6 +6,12 @@ This is a non official LaTeX and Microsoft PowerPoint presentation template them
 ##Description
 This template subserves the students of FCT NOVA that have to do study presentations, like curricular projects, thesis and other academic related studies.
 
+<img src="https://github.com/filipedu11/presentationfct/raw/master/powerpoint/figures/ScreenShot_1.png" width="500">
+
+<img src="https://github.com/filipedu11/presentationfct/raw/master/powerpoint/figures/ScreenShot_2.png" width="500">
+
+<img src="https://github.com/filipedu11/presentationfct/raw/master/powerpoint/figures/ScreenShot_3.png" width="500">
+
 ## Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
@@ -15,6 +21,9 @@ This template subserves the students of FCT NOVA that have to do study presentat
 
 ##Disclaimer
 This is not an official template from FCT NOVA, use at your own discretion.
+
+##Last Changes
+Last edit to this doc in 28 Feb 2017
 
 ##License
 
