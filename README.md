@@ -3,7 +3,7 @@
 This project is a non-official LaTeX and Microsoft PowerPoint presentation template themed for FCT NOVA.
 It boasts the colours of the school and offers a myriad of pre-built slides that should suit your every need.
 
-##Description
+## Description
 
 This template subserves the students of FCT NOVA that have to present projects publicly and don't want to spend time fiddling with any weird template to produce some beautiful slides. 
 
@@ -12,11 +12,12 @@ The Presentation FCT NOVA template is available in two flavours, one in LaTeX an
 
 You have 7 styles of slides at your disposal, but you can always start with a blank and personalise with the layout that you find most appropriate.
 
-##Getting Started
-###Download
+## Getting Started
+
+### Download
 Get the latest version from the [releases page](https://github.com/filipedu11/presentationfct/releases)!
 
-##ScreenShots
+## ScreenShots
 
 <img src="https://github.com/filipedu11/presentationfct/raw/master/powerpoint/figures/ScreenShot_1.png" width="500">
 
@@ -41,18 +42,18 @@ You can contact us at:
 `ef.lopes` and/or `lmt.silva` (at) campus.fct.unl.pt
 
 
-##Disclaimer
+## Disclaimer
 
 This project is NOT an official template from FCT NOVA. It comes with no warranty. It was created by a group of students that felt the need for a simple and beautiful template for the day to day college presentations.
 Use at your discretion!
 
-##Last Changes
+##  Last Changes
 
 Last edit to this doc in 2 Aug 2017
 
-##Thanks
+## Thanks
 * [Prof. João Lourenço](https://github.com/joaomlourenco) for giving us the idea of standardizing a template for FCT NOVA
 
-##License
+## License
 
 The project is licensed under the MIT license.
